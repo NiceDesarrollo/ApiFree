@@ -1,3 +1,4 @@
+
 import {
   Card,
   CardActionArea,
@@ -8,48 +9,70 @@ import {
 } from "@mui/material";
 
 interface InfoCardProps {
-  isLoading: boolean;
-  data: Blob | undefined; 
-  titleInfoCard: string
+  isLoading?: boolean;
+  content?: React.ReactNode;
+  imageUrl?: string;
+  altImage?: string;
+  error?: boolean;
 }
 
-const InfoCard: React.FC<InfoCardProps> = ({ isLoading, data, titleInfoCard }) => {
-
+const InfoCard: React.FC<InfoCardProps> = ({
+  isLoading,
+  content,
+  imageUrl,
+  altImage,
+  error,
+}) => {
   return (
     <>
-      {isLoading && (
+      {error && (
+        <Card sx={{ maxWidth: 345 }}>
+          <CardActionArea>
+            <CardMedia
+              component="img"
+              image={
+                "https://lh3.googleusercontent.com/_mruGfyg4GvStbvd4jmO36feG6f_f9a1uleCaw5V0EurPd9iyTFFal6ypXEc5v6vXF_fFl-6AQDj9at442qvFBGQEoFh2OrMFIEL1Mnxaaea9kfqAwc=w1400-v0"
+              }
+              alt={altImage}
+              style={{ height: "350px", objectFit: "contain" }}
+            />
+
+            <CardContent>
+              <Typography variant="h5"  textAlign={"center"}>
+                Server error :(
+              </Typography>
+            </CardContent>
+
+          </CardActionArea>
+        </Card>
+      )}
+      {((isLoading && !error && !imageUrl) || !content) && (
         <>
           <Skeleton
             sx={{ bgcolor: "grey.900" }}
             variant="rectangular"
             height={350}
+            width={345}
           />
         </>
       )}
-      {data && (
+      {(imageUrl || (content && !error && !isLoading)) && (
         <Card sx={{ maxWidth: 345 }}>
           <CardActionArea>
-            <CardMedia
-              component="img"
-              image={URL.createObjectURL(data)}
-              alt={titleInfoCard}
-              style={{ maxHeight: "350px", objectFit: "contain" }}
-            />
-            <CardContent>
-              <Typography
-                textAlign={"center"}
-                gutterBottom
-                variant="h5"
-                component="div"
-              >
-                {titleInfoCard}
-              </Typography>
-            </CardContent>
+            {imageUrl && (
+              <CardMedia
+                component="img"
+                image={imageUrl}
+                alt={altImage}
+                style={{ height: "350px", objectFit: "contain" }}
+              />
+            )}
+            <CardContent>{content}</CardContent>
           </CardActionArea>
         </Card>
       )}
     </>
   );
-}
+};
 
 export default InfoCard;
