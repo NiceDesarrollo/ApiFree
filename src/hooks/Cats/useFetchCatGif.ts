@@ -1,10 +1,10 @@
 import { useQuery } from "react-query";
-import { fetchCatImage } from "../lib/fetchs";
+import { fetchCatGif } from "../../lib/CatFetchs";
 
-export const useFetchCatImage = () => {
+export const usefetchCatGif = () => {
   return useQuery(
-    `fetchCatImage`, 
-    () => fetchCatImage(),
+    `fetchCatGif`, 
+    () => fetchCatGif(),
     {
       onError: (error) => console.error("Error fetching cat gif:", error),
     }

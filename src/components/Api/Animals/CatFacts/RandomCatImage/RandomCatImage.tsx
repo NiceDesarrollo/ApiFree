@@ -1,11 +1,10 @@
-import { useFetchCatImage } from "../../../../../hooks/useFetchCatImage";
+import { useFetchCatImage } from "../../../../../hooks/Cats/useFetchCatImage";
 import InfoCard from "../../../../Cards/InfoCard";
 import ContentRandomImage from "./ContentRandomImage";
 
 const RandomCatImage = () => {
 
   const { isLoading, data, error } = useFetchCatImage();
-
 
   return (
     <>

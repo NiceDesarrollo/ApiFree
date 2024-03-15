@@ -41,10 +41,18 @@ export function ListBar() {
         </ListItemButton>
         <Collapse in={open} timeout="auto" unmountOnExit>
           <List component="div" disablePadding>
+            {/* Cats */}
             <Link className="link" to={`/CatFacts`}>
               <ListItemButton sx={{ pl: 4 }}>
                 <ListItemIcon>🐱</ListItemIcon>
                 <ListItemText primary="CATAAS" />
+              </ListItemButton>
+            </Link>
+            {/* Dogs */}
+            <Link className="link" to={`/Dogs`}>
+              <ListItemButton sx={{ pl: 4 }}>
+                <ListItemIcon>🐕</ListItemIcon>
+                <ListItemText primary="Dogs" />
               </ListItemButton>
             </Link>
           </List>

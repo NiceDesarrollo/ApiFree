@@ -1,4 +1,4 @@
-import { usefetchCatGif } from "../../../../../hooks/useFetchCatGif";
+import { usefetchCatGif } from "../../../../../hooks/Cats/useFetchCatGif";
 import InfoCard from "../../../../Cards/InfoCard";
 import ContentRandomGif from "./ContentRandomGif";
 

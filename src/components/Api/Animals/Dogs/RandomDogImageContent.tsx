@@ -1,11 +1,11 @@
 import { Typography } from "@mui/material";
 
-const ContentRandomImage = () => {
+const RandomDogImageContent = () => {
   return (
     <Typography textAlign={"center"} gutterBottom variant="h5" component="div">
-      Random Cat Image
+      Random Dog Image
     </Typography>
   );
 };
 
-export default ContentRandomImage;
+export default RandomDogImageContent;

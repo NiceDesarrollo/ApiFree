@@ -27,3 +27,25 @@ export const fetchTagCat = async (tag: string): Promise<Blob> => {
 
   return await response.blob(); // Get the  data as Blob
 };
+
+export const fetchCatTagsOptions = async (): Promise<any> => {
+  const response = await fetch("https://cataas.com/api/tags");
+
+
+  // Check for successful response status
+  if (!response.ok) {
+    throw new Error(`Failed to fetch gif image: ${response.statusText}`);
+  }
+
+  const data = await response.json() as string[];
+
+  const optionsObject = data.map(item => ({
+    value: item,
+    label: item,
+  }));
+  
+  // Return the options object
+  return optionsObject;
+};
+
+

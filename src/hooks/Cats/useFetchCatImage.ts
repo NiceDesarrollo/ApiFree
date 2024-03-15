@@ -1,10 +1,10 @@
 import { useQuery } from "react-query";
-import { fetchTagCat } from "../lib/fetchs";
+import { fetchCatImage } from "../../lib/CatFetchs";
 
-export const useFetchTagCat = (tag:string) => {
+export const useFetchCatImage = () => {
   return useQuery(
-    `fetchTagCatImage-${tag}`, 
-    () => fetchTagCat(tag),
+    `fetchCatImage`, 
+    () => fetchCatImage(),
     {
       onError: (error) => console.error("Error fetching cat image:", error),
     }
