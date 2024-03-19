@@ -1,4 +1,3 @@
-
 import {
   Card,
   CardActionArea,
@@ -14,6 +13,7 @@ interface InfoCardProps {
   imageUrl?: string;
   altImage?: string;
   error?: boolean;
+  cardActionArea?: boolean;
 }
 
 const InfoCard: React.FC<InfoCardProps> = ({
@@ -22,6 +22,7 @@ const InfoCard: React.FC<InfoCardProps> = ({
   imageUrl,
   altImage,
   error,
+  cardActionArea = true,
 }) => {
   return (
     <>
@@ -38,11 +39,10 @@ const InfoCard: React.FC<InfoCardProps> = ({
             />
 
             <CardContent>
-              <Typography variant="h5"  textAlign={"center"}>
+              <Typography variant="h5" textAlign={"center"}>
                 Server error :(
               </Typography>
             </CardContent>
-
           </CardActionArea>
         </Card>
       )}
@@ -58,17 +58,32 @@ const InfoCard: React.FC<InfoCardProps> = ({
       )}
       {(imageUrl || (content && !error && !isLoading)) && (
         <Card sx={{ maxWidth: 345 }}>
-          <CardActionArea>
-            {imageUrl && (
-              <CardMedia
-                component="img"
-                image={imageUrl}
-                alt={altImage}
-                style={{ height: "350px", objectFit: "contain" }}
-              />
-            )}
-            <CardContent>{content}</CardContent>
-          </CardActionArea>
+          {cardActionArea && (
+            <CardActionArea>
+              {imageUrl && (
+                <CardMedia
+                  component="img"
+                  image={imageUrl}
+                  alt={altImage}
+                  style={{ height: "350px", objectFit: "contain" }}
+                />
+              )}
+              <CardContent>{content}</CardContent>
+            </CardActionArea>
+          )}
+          {!cardActionArea && (
+            <>
+              {imageUrl && (
+                <CardMedia
+                  component="img"
+                  image={imageUrl}
+                  alt={altImage}
+                  style={{ height: "350px", objectFit: "contain" }}
+                />
+              )}
+              <CardContent>{content}</CardContent>
+            </>
+          )}
         </Card>
       )}
     </>

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const TheMealDbLink = () => {
   return (
     <>
-      <Link className="link" to={`/TheMealDb`}>
+      <Link className="no-link" to={`/TheMealDb`}>
         <ListItemButton sx={{ pl: 4 }}>
           <ListItemIcon>🍽️</ListItemIcon>
           <ListItemText primary="TheMealDb" />

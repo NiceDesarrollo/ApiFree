@@ -56,7 +56,7 @@ export function SideBar(props: ISideBarProps) {
           >
             <MenuIcon />
           </IconButton>
-          <Link className="link" to={`/`}>
+          <Link className="no-link" to={`/`}>
             <Typography variant="h6" noWrap component="div">
               {titleBar}
             </Typography>

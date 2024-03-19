@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const DogsLink = () => {
   return (
     <>
-      <Link className="link" to={`/Dogs`}>
+      <Link className="no-link" to={`/Dogs`}>
         <ListItemButton sx={{ pl: 4 }}>
           <ListItemIcon>🐕</ListItemIcon>
           <ListItemText primary="Dogs" />

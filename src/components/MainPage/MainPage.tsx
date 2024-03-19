@@ -13,7 +13,7 @@ export function MainPage() {
         </Typography>
         <Typography padding={3}>
           Inspirated of{" "}
-          <Link to={"https://github.com/public-apis/public-apis"}>
+          <Link target="_blank" className="link" to={"https://github.com/public-apis/public-apis"}>
             public-apis
           </Link>{" "}
           repo
