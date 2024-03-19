@@ -1,6 +1,6 @@
 import useOpenState from "../../../lib/useOpenState";
 import { Collapse, List, ListItemButton, ListItemIcon, ListItemText } from "@mui/material";
-import PetsIcon from "@mui/icons-material/Pets";
+import FastfoodIcon from '@mui/icons-material/Fastfood';
 import { ExpandLess, ExpandMore } from "@mui/icons-material";
 import { Link } from "react-router-dom";
 
@@ -18,9 +18,9 @@ const FoodAndDrink = () => {
       >
         <ListItemButton onClick={handleClick}>
           <ListItemIcon>
-            <PetsIcon />
+            <FastfoodIcon />
           </ListItemIcon>
-          <ListItemText primary="Animals" />
+          <ListItemText primary="Food and Drink" />
           {open ? <ExpandLess /> : <ExpandMore />}
         </ListItemButton>
         <Collapse in={open} timeout="auto" unmountOnExit>
@@ -30,13 +30,6 @@ const FoodAndDrink = () => {
               <ListItemButton sx={{ pl: 4 }}>
                 <ListItemIcon>🐱</ListItemIcon>
                 <ListItemText primary="CATAAS" />
-              </ListItemButton>
-            </Link>
-            {/* Dogs */}
-            <Link className="link" to={`/Dogs`}>
-              <ListItemButton sx={{ pl: 4 }}>
-                <ListItemIcon>🐕</ListItemIcon>
-                <ListItemText primary="Dogs" />
               </ListItemButton>
             </Link>
           </List>

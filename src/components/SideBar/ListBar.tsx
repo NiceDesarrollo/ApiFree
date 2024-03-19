@@ -2,6 +2,7 @@ import { Divider, Toolbar } from "@mui/material";
 
 import { Link } from "react-router-dom";
 import AnimalsList from "./Animals/AnimalsList";
+import FoodAndDrink from "./FoodAndDrink/FoodAndDrink";
 import "./sideBar.css";
 
 export function ListBar() {
@@ -14,6 +15,8 @@ export function ListBar() {
       <Divider />
 
       <AnimalsList />
+
+      <FoodAndDrink />
     </>
   );
 }

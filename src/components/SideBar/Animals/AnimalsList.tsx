@@ -7,11 +7,11 @@ import {
 } from "@mui/material";
 import PetsIcon from "@mui/icons-material/Pets";
 import { ExpandLess, ExpandMore } from "@mui/icons-material";
-import { Link } from "react-router-dom";
 import useOpenState from "../../../lib/useOpenState";
+import CatsLink from "./CatsLink/CatsLink";
+import DogsLink from "./DogsLink/DogsLink";
 
 const AnimalsList = () => {
-  
   const { open, handleClick } = useOpenState();
 
   return (
@@ -30,20 +30,8 @@ const AnimalsList = () => {
         </ListItemButton>
         <Collapse in={open} timeout="auto" unmountOnExit>
           <List component="div" disablePadding>
-            {/* Cats */}
-            <Link className="link" to={`/CatFacts`}>
-              <ListItemButton sx={{ pl: 4 }}>
-                <ListItemIcon>🐱</ListItemIcon>
-                <ListItemText primary="CATAAS" />
-              </ListItemButton>
-            </Link>
-            {/* Dogs */}
-            <Link className="link" to={`/Dogs`}>
-              <ListItemButton sx={{ pl: 4 }}>
-                <ListItemIcon>🐕</ListItemIcon>
-                <ListItemText primary="Dogs" />
-              </ListItemButton>
-            </Link>
+            <CatsLink />
+            <DogsLink />
           </List>
         </Collapse>
       </List>
