@@ -1,12 +1,11 @@
 import { Typography } from "@mui/material";
-import CardTagSelect from "./CardTagSelect";
 
 interface CardContentProps {
   setBlobImageurl: React.Dispatch<React.SetStateAction<Blob | undefined>>;
 }
 
 
-const CardInfoContent: React.FC<CardContentProps> = ({ setBlobImageurl }) => {
+const CardInfoContent: React.FC<CardContentProps> = () => {
 
   return (
     <>
@@ -16,7 +15,7 @@ const CardInfoContent: React.FC<CardContentProps> = ({ setBlobImageurl }) => {
         variant="h5"
         component="div"
       >
-        Cat tag
+        Cat tag "pretty"
       </Typography>
       {/* <CardTagSelect setBlobImageurl={setBlobImageurl} /> */}
     </>

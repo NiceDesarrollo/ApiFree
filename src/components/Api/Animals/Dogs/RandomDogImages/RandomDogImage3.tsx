@@ -1,4 +1,4 @@
-import { useFetchDogImage2, useFetchDogImage3 } from "../../../../../hooks/Dogs/useFetchDogImage";
+import { useFetchDogImage3 } from "../../../../../hooks/Dogs/useFetchDogImage";
 import InfoCard from "../../../../Cards/InfoCard";
 import RandomDogImageContent from "../RandomDogImageContent";
 

@@ -52,9 +52,12 @@ function App() {
               width: { sm: `calc(100% - ${drawerWidth}px)` },
             }}
           >
+            {/* Espacio del navbar con el contenido */}
             <Toolbar />
+            {/* Contenido de main page  */}
             <Outlet />
           </Box>
+
         </ThemeProvider>
       </Box>
     </QueryClientProvider>
