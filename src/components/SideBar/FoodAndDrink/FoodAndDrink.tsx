@@ -1,8 +1,8 @@
-import useOpenState from "../../../lib/useOpenState";
-import { Collapse, List, ListItemButton, ListItemIcon, ListItemText } from "@mui/material";
-import FastfoodIcon from '@mui/icons-material/Fastfood';
 import { ExpandLess, ExpandMore } from "@mui/icons-material";
-import { Link } from "react-router-dom";
+import FastfoodIcon from '@mui/icons-material/Fastfood';
+import { Collapse, List, ListItemButton, ListItemIcon, ListItemText } from "@mui/material";
+import useOpenState from "../../../lib/useOpenState";
+import BaconmockupLink from "./TheMealDb/TheMealDbLink";
 
 
 const FoodAndDrink = () => {
@@ -25,13 +25,7 @@ const FoodAndDrink = () => {
         </ListItemButton>
         <Collapse in={open} timeout="auto" unmountOnExit>
           <List component="div" disablePadding>
-            {/* Cats */}
-            <Link className="link" to={`/CatFacts`}>
-              <ListItemButton sx={{ pl: 4 }}>
-                <ListItemIcon>🐱</ListItemIcon>
-                <ListItemText primary="CATAAS" />
-              </ListItemButton>
-            </Link>
+            <BaconmockupLink/>
           </List>
         </Collapse>
       </List>
