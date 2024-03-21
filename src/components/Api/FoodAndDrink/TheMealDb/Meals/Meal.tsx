@@ -1,8 +1,6 @@
-import { IconButton, IconButtonProps, styled } from "@mui/material";
 import { useFetchTheMealDb } from "../../../../../hooks/TheMealDb/useFetchTheMealDb";
 import InfoCard from "../../../../Cards/InfoCard";
 import TheMealDbContent from "../TheMealDbContent";
-import React from "react";
 
 
 
